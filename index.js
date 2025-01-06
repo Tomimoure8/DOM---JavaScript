@@ -181,6 +181,15 @@ console.log (parrafo);
 
 
 
+// Tema: Selección de elementos con getElementsByClassName
+
+// Consigna: Selecciona todos los elementos de una clase específica y realiza operaciones sobre ellos.
+
+let clase = document.getElementsByClassName ("parrafo");
+
+console.log (clase);
+
+
 
 
 
