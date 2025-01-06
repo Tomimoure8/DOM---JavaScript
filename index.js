@@ -203,6 +203,24 @@ claseAro.innerText = 'hola';
 
 
 
+// Tema: Selección de elementos con querySelector
+
+// Consigna: Utiliza querySelector para seleccionar elementos y muestra su contenido en la consola.
+
+let ol = document.querySelector ("ol");
+
+console.log (ol);
+
+let claseNoeQuery = document.querySelector (".titulo-oca");
+
+console.log (ol);
+
+let elementoH1Query = document.querySelector ("#tituloUno");
+
+console.log (elementoH1Query);
+
+
+
 
 
 
