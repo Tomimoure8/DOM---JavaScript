@@ -191,6 +191,17 @@ console.log (clase);
 
 
 
+// Tema: Selección específica de elementos en una clase
+
+// Consigna: Selecciona un elemento específico dentro de una clase y modifica su contenido.
+
+let claseAro = clase[0];
+
+console.log (claseAro);
+
+claseAro.innerText = 'hola';
+
+
 
 
 
