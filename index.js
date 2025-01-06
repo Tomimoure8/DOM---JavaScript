@@ -169,9 +169,15 @@
 let elementoH1 = document.getElementById ("tituloUno");
 console.log (elementoH1);
 
+
+
 // Tema: Selecciona elementos con getElementsByTagName.
 
 // Consigna: Selecciona todos los elementos de un tipo de etiqueta específico y muestra su contenido en la consola.
+
+let parrafo = document.getElementsByTagName ("p");
+
+console.log (parrafo);
 
 
 
