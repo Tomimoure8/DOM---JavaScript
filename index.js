@@ -219,24 +219,39 @@ let elementoH1Query = document.querySelector ("#tituloUno");
 
 console.log (elementoH1Query);
 
+// ******************************************************************************************************************************************
+
+// Manual de JavaScript: Integración de Promesas y DOM
 
 
+// Ejercicio 1: Selección de elementos con getElementById
+// Consigna: Selecciona un elemento por su ID y muestra su contenido en la consola. Luego, utiliza una promesa para simular una operación asincrónica y actualiza el contenido del elemento después de un tiempo.
+// 1) Crea una variable y asigna a ella el elemento que deseas seleccionar utilizando getElementById.
+// 2) Imprime el contenido del elemento seleccionado en la consola.
+// 3) Crea una función que devuelva una promesa que se resuelva después de 2 segundos.
+// Utiliza .then para actualizar el contenido del elemento después de que la promesa se resuelva.
 
+let titulo2 = document.getElementById ("mugrientos");
 
+console.log (titulo2);
 
+let funcionTitulo2 = function title () {
+    return new Promise ((resolve, reject) => {
+        setTimeout (() => {
+            if (success === true ) {
+                resolve ("enviado");
+            }
+            else {
+                reject ("cancelado");
+            }
+        }, 2000);
+    })
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+funcionTitulo2(false)
+.then ((abierto) => {
+    console.log ("recibi el paquete, fue "+abierto);
+})
+.catch ((queja) => {
+    console.error ("se "+queja+" el pedido");
+})
