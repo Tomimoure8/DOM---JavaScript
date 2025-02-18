@@ -231,30 +231,30 @@
 // 3) Crea una función que devuelva una promesa que se resuelva después de 2 segundos.
 // Utiliza .then para actualizar el contenido del elemento después de que la promesa se resuelva.
 
-let titulo2 = document.getElementById ("mugrientos");
+// let titulo2 = document.getElementById ("mugrientos");
 
-console.log (titulo2);
+// console.log (titulo2);
 
-let funcionTitulo2 = function title () {
-    return new Promise ((resolve, reject) => {
-        setTimeout (() => {
-            if (success === true ) {
-                resolve ("enviado");
-            }
-            else {
-                reject ("cancelado");
-            }
-        }, 2000);
-    })
-}
+// let funcionTitulo2 = function title () {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout (() => {
+//             if (success === true ) {
+//                 resolve ("enviado");
+//             }
+//             else {
+//                 reject ("cancelado");
+//             }
+//         }, 2000);
+//     })
+// }
 
-funcionTitulo2(false)
-.then ((abierto) => {
-    console.log ("recibi el paquete, fue "+abierto);
-})
-.catch ((queja) => {
-    console.error ("se "+queja+" el pedido");
-})
+// funcionTitulo2(false)
+// .then ((abierto) => {
+//     console.log ("recibi el paquete, fue "+abierto);
+// })
+// .catch ((queja) => {
+//     console.error ("se "+queja+" el pedido");
+// })
 
 // ACLARACIÓN: use success para simular la condición, ya que en un principio estaba comparando titulo2 con true (un elemento del dom con un valor booleano), dos cosas distintas.
 
@@ -265,35 +265,69 @@ funcionTitulo2(false)
 // 1) Crea una variable y asigna a ella todos los elementos que comparten un tipo de etiqueta específico utilizando getElementsByTagName.
 // 2) Imprime el contenido de los elementos seleccionados en la consola.
 // 3) Crea una función que devuelva una promesa que se resuelva después de 3 segundos.
-// Utiliza .then para agregar un nuevo elemento al DOM después de que la promesa se resuelva.
+// Utilia .then para agregar un nuevo elemento al DOM después de que la promesa se resuelva.
 
-let conjuntoElmentos = document.getElementsByTagName ("li");
+// let conjuntoElmentos = document.getElementsByTagName ("li");
 
-console.log (conjuntoElmentos);
+// console.log (conjuntoElmentos);
 
-for (let i = 0; i < conjuntoElmentos.length; i++) {
-    console.log (conjuntoElmentos[i]);
+// for (let i = 0; i < conjuntoElmentos.length; i++) {
+//     console.log (conjuntoElmentos[i]);
+// }
+
+// let nuevaUbicacion = document.getElementsByClassName ("titulares")[0];
+
+// let funcionReestruc = (success) => {
+//     return new Promise ((resolve, reject) => {
+        
+//         setTimeout (() => {
+//             if (success === true) {
+//                 resolve ("Messi se agrego al equipo");
+//             }
+//             else {
+//                 reject ("Messi no entro a la alineación");
+//             }
+//         }, 3000)
+//     })
+// }
+// funcionReestruc(true)
+// .then ((ok) => {
+//     console.log (ok);
+//     let lionelMessi = document.createElement ("li");
+//     lionelMessi.innerText = "Lionel Messi";
+//     nuevaUbicacion.appendChild (lionelMessi);
+// })
+// .catch ((fail) => {
+//     console.error (fail);
+// })
+
+// Ejercicio 3: Selección de elementos con getElementsByClassName
+// Consigna: Selecciona todos los elementos de una clase específica y realiza operaciones sobre ellos. Usa una promesa para modificar las clases de los elementos después de un tiempo.
+// 1) Crea una variable y asigna a ella todos los elementos que comparten una misma clase utilizando getElementsByClassName.
+// 2) Imprime el contenido de los elementos seleccionados en la consola.
+// 3) Crea una función que devuelva una promesa que se resuelva después de 1 segundo.
+// 4) Utiliza .then para modificar el contenido del elemento seleccionado después de que la promesa se resuelva.
+
+
+let conjuntoElementos = document.getElementsByClassName ("parrafo");
+
+for (let i = 0; i < conjuntoElementos.length; i++) {
+    console.log (conjuntoElementos[i]);
 }
 
-let nuevaUbicacion = document.getElementsByClassName ("titulares");
-
-let funcionReestruc = () => {
+let funcionPromesa = () => {
     return new Promise ((resolve, reject) => {
-        
         setTimeout (() => {
-            if (success === true) {
-                resolve ("");
-            }
-            else {
-                reject ("");
-            }
-        }, 3000)
+            resolve ("pedido enviado");
+        }, 1000)
     })
 }
-funcionReestruc(true)
+
+funcionPromesa()
 .then ((ok) => {
-    console.log (ok);
-    let lionelMessi = document.createElement ("li");
-    lionelMessi.innerText = "Lionel Messi";
-    nuevaUbicacion.appendchild (lionelMessi);
+    let parrafoPrimero = document.getElementsByClassName ("parrafo")[0];
+    parrafoPrimero.innerText = "parrafo 1";
+    console.log (ok + ", abierto y modificado");
 })
+
+
