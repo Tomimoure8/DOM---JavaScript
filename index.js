@@ -166,8 +166,8 @@
 // Tema: Selección de elementos con getElementById
 
 // Consigna: Selecciona un elemento por su ID y muestra su contenido en la consola.
-let elementoH1 = document.getElementById ("tituloUno");
-console.log (elementoH1);
+// let elementoH1 = document.getElementById ("tituloUno");
+// console.log (elementoH1);
 
 
 
@@ -175,9 +175,9 @@ console.log (elementoH1);
 
 // Consigna: Selecciona todos los elementos de un tipo de etiqueta específico y muestra su contenido en la consola.
 
-let parrafo = document.getElementsByTagName ("p");
+// let parrafo = document.getElementsByTagName ("p");
 
-console.log (parrafo);
+// console.log (parrafo);
 
 
 
@@ -185,9 +185,9 @@ console.log (parrafo);
 
 // Consigna: Selecciona todos los elementos de una clase específica y realiza operaciones sobre ellos.
 
-let clase = document.getElementsByClassName ("parrafo");
+// let clase = document.getElementsByClassName ("parrafo");
 
-console.log (clase);
+// console.log (clase);
 
 
 
@@ -195,11 +195,11 @@ console.log (clase);
 
 // Consigna: Selecciona un elemento específico dentro de una clase y modifica su contenido.
 
-let claseAro = clase[0];
+// let claseAro = clase[0];
 
-console.log (claseAro);
+// console.log (claseAro);
 
-claseAro.innerText = 'hola';
+// claseAro.innerText = 'hola';
 
 
 
@@ -207,17 +207,17 @@ claseAro.innerText = 'hola';
 
 // Consigna: Utiliza querySelector para seleccionar elementos y muestra su contenido en la consola.
 
-let ol = document.querySelector ("ol");
+// let ol = document.querySelector ("ol");
 
-console.log (ol);
+// console.log (ol);
 
-let claseNoeQuery = document.querySelector (".titulo-oca");
+// let claseNoeQuery = document.querySelector (".titulo-oca");
 
-console.log (ol);
+// console.log (ol);
 
-let elementoH1Query = document.querySelector ("#tituloUno");
+// let elementoH1Query = document.querySelector ("#tituloUno");
 
-console.log (elementoH1Query);
+// console.log (elementoH1Query);
 
 // ******************************************************************************************************************************************
 
@@ -254,4 +254,46 @@ funcionTitulo2(false)
 })
 .catch ((queja) => {
     console.error ("se "+queja+" el pedido");
+})
+
+// ACLARACIÓN: use success para simular la condición, ya que en un principio estaba comparando titulo2 con true (un elemento del dom con un valor booleano), dos cosas distintas.
+
+
+
+// Ejercicio 2: Selección de elementos con getElementsByTagName
+// Consigna: Selecciona todos los elementos de un tipo de etiqueta específico y muestra su contenido en la consola. Utiliza una promesa para simular una operación asincrónica que agregue un nuevo elemento al DOM después de un tiempo.
+// 1) Crea una variable y asigna a ella todos los elementos que comparten un tipo de etiqueta específico utilizando getElementsByTagName.
+// 2) Imprime el contenido de los elementos seleccionados en la consola.
+// 3) Crea una función que devuelva una promesa que se resuelva después de 3 segundos.
+// Utiliza .then para agregar un nuevo elemento al DOM después de que la promesa se resuelva.
+
+let conjuntoElmentos = document.getElementsByTagName ("li");
+
+console.log (conjuntoElmentos);
+
+for (let i = 0; i < conjuntoElmentos.length; i++) {
+    console.log (conjuntoElmentos[i]);
+}
+
+let nuevaUbicacion = document.getElementsByClassName ("titulares");
+
+let funcionReestruc = () => {
+    return new Promise ((resolve, reject) => {
+        
+        setTimeout (() => {
+            if (success === true) {
+                resolve ("");
+            }
+            else {
+                reject ("");
+            }
+        }, 3000)
+    })
+}
+funcionReestruc(true)
+.then ((ok) => {
+    console.log (ok);
+    let lionelMessi = document.createElement ("li");
+    lionelMessi.innerText = "Lionel Messi";
+    nuevaUbicacion.appendchild (lionelMessi);
 })
