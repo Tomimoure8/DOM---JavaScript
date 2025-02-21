@@ -339,30 +339,72 @@
 // 4) Utiliza setInterval para actualizar el contenido del elemento seleccionado cada 2 segundos.
 // 5) Utiliza clearInterval para detener la actualización después de 10 segundos.
 
-let claseEspecifica = document.getElementsByClassName ("parrafo");
+// let claseEspecifica = document.getElementsByClassName ("parrafo");
 
-let claseEspecificAmodificar = claseEspecifica[0];
+// let claseEspecificAmodificar = claseEspecifica[0];
 
-let funcionPromesa = () => {
+// let funcionPromesa = () => {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout (() => {
+//             resolve ("ok");
+
+//         }, 1000);
+//     })
+// }
+
+// funcionPromesa ()
+// .then ((mensaje) => {
+//     console.log (mensaje);
+//     let i = 0
+//     let j = setInterval (() => {
+//         claseEspecificAmodificar.innerText = "parrafo 1"
+//         console.log (claseEspecificAmodificar);
+//         i++;
+
+//         if (i >= 5) {
+//             clearInterval (j);
+//         }
+//     }, 2000)
+// })
+
+// Este ejercicio me resulto dificil en la parte del .then, a partir del paso 4 y 5. Tenerlo en cuenta para la pròxima.
+
+// Ejercicio 5: Modificación periódica de un elemento en una clase con setInterval y clearInterval
+// Consigna: Selecciona un elemento específico dentro de una clase y modifica su contenido utilizando una promesa. Además, utiliza setInterval para actualizar el contenido del elemento cada cierto tiempo y clearInterval para detener la actualización después de un período.
+// 1) Selecciona elementos: Utiliza getElementsByClassName para seleccionar todos los elementos que pertenecen a una clase específica.
+// 2) Selecciona un elemento específico: Escoge el primer elemento de la colección y almacénalo en una variable.
+// 3) Crea una promesa: Define una función que devuelva una promesa que se resuelva después de 1 segundo.
+// 4) Utiliza setInterval: Usa setInterval para actualizar el contenido del elemento seleccionado cada 1.5 segundos.
+// 5) Detiene la actualización: Usa clearInterval para detener la actualización después de 6 segundos (o cuatro actualizaciones).
+
+let li = document.getElementsByTagName ("li");
+
+let liSexto = li[5];
+
+console.log (liSexto);
+
+let funcionPromesa2 = () => {
     return new Promise ((resolve, reject) => {
         setTimeout (() => {
-            resolve ("ok");
-
+            // resolve ("promesa resuelta");
+            reject ("promesa rechazada");
         }, 1000);
     })
 }
 
-funcionPromesa ()
-.then ((mensaje) => {
-    console.log (mensaje);
-    let i = 0
-    let j = setInterval (() => {
-        claseEspecificAmodificar.innerText = "parrafo 1"
-        console.log (claseEspecificAmodificar);
+funcionPromesa2 ()
+.then ((ok) => {
+    let i = 0;
+    liSexto.innerText = "Hola chicos";
+    let tiempo = setInterval (() => {
+        console.log (liSexto, i);
         i++;
-
-        if (i >= 5) {
-            clearInterval (j);
+        if (i >= 4) {
+            console.log (ok)
+            clearInterval (tiempo)
         }
-    }, 2000)
+    },1500)
+})
+.catch ((no) => {
+    console.error (no);
 })
