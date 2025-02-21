@@ -202,23 +202,49 @@
 // claseAro.innerText = 'hola';
 
 
+//******************************************************************************************************************************************
 
-// Tema: Selección de elementos con querySelector
+// Ejercicio: Manipulación del DOM con querySelector, querySelectorAll, innerText e innerHTML. Consigna: Utiliza querySelector y querySelectorAll para seleccionar elementos del DOM y modifica su contenido utilizando innerText e innerHTML.
+// Instrucciones:
+// 1) Selecciona un elemento específico utilizando querySelector y almacénalo en una variable.
+// 2) Modifica el contenido del elemento seleccionado utilizando innerText.
+// 3) Selecciona múltiples elementos utilizando querySelectorAll y almacénalos en una variable.
+// 4) Recorre todos los elementos seleccionados y modifica su contenido utilizando innerHTML.
+// 5) Selecciona otro elemento específico utilizando querySelector y almacénalo en una variable.
+// 6) Modifica el contenido del elemento seleccionado utilizando innerHTML, incluyendo etiquetas HTML dentro del contenido.
 
-// Consigna: Utiliza querySelector para seleccionar elementos y muestra su contenido en la consola.
+let elementoUnico = document.querySelector (".ola-query");
 
-// let ol = document.querySelector ("ol");
+let elementoUnicoModificado = elementoUnico.innerText = "Titulo 5 modificado"
 
-// console.log (ol);
+let multiplesElementos = document.querySelectorAll ("li");
 
-// let claseNoeQuery = document.querySelector (".titulo-oca");
+let olId = document.querySelector ("#lii-oo");
 
-// console.log (ol);
 
-// let elementoH1Query = document.querySelector ("#tituloUno");
-
-// console.log (elementoH1Query);
-
+let funcionPromesa3 = () => {
+    return new Promise ((resolve) => {
+        resolve ("elementos seleccionados recorridos");
+    })
+}
+funcionPromesa3()
+.then ((abierto) => {
+    let i = 0;
+    let recorridoElementos = setInterval (() => {
+    i++;
+    console.log (i);
+    if (i >= multiplesElementos.length) {
+        clearInterval (recorridoElementos);
+        olId.innerHTML = `
+            <li>Hola chicos</li>
+            <li>Hola chicos</li>
+            <li>Hola chicos</li>
+            <li>Hola chicos</li>
+        `
+        console.log(abierto);
+    }
+}, 1000 )
+})
 // ******************************************************************************************************************************************
 
 // Manual de JavaScript: Integración de Promesas y DOM
@@ -377,34 +403,36 @@
 // 4) Utiliza setInterval: Usa setInterval para actualizar el contenido del elemento seleccionado cada 1.5 segundos.
 // 5) Detiene la actualización: Usa clearInterval para detener la actualización después de 6 segundos (o cuatro actualizaciones).
 
-let li = document.getElementsByTagName ("li");
+// let li = document.getElementsByTagName ("li");
 
-let liSexto = li[5];
+// let liSexto = li[5];
 
-console.log (liSexto);
+// console.log (liSexto);
 
-let funcionPromesa2 = () => {
-    return new Promise ((resolve, reject) => {
-        setTimeout (() => {
-            // resolve ("promesa resuelta");
-            reject ("promesa rechazada");
-        }, 1000);
-    })
-}
+// let funcionPromesa2 = () => {
+//     return new Promise ((resolve, reject) => {
+//         setTimeout (() => {
+//             resolve ("promesa resuelta");
+//             reject ("promesa rechazada");
+//         }, 1000);
+//     })
+// }
 
-funcionPromesa2 ()
-.then ((ok) => {
-    let i = 0;
-    liSexto.innerText = "Hola chicos";
-    let tiempo = setInterval (() => {
-        console.log (liSexto, i);
-        i++;
-        if (i >= 4) {
-            console.log (ok)
-            clearInterval (tiempo)
-        }
-    },1500)
-})
-.catch ((no) => {
-    console.error (no);
-})
+// funcionPromesa2 ()
+// .then ((ok) => {
+//     let i = 0;
+//     liSexto.innerText = "Hola chicos";
+//     let tiempo = setInterval (() => {
+//         console.log (liSexto, i);
+//         i++;
+//         if (i >= 4) {
+//             console.log (ok)
+//             clearInterval (tiempo)
+//         }
+//     },1500)
+// })
+// .catch ((no) => {
+//     console.error (no);
+// })
+
+// Puntuación de claridad: 4/5
