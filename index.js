@@ -204,7 +204,7 @@
 
 //******************************************************************************************************************************************
 
-// Ejercicio: Manipulación del DOM con querySelector, querySelectorAll, innerText e innerHTML. Consigna: Utiliza querySelector y querySelectorAll para seleccionar elementos del DOM y modifica su contenido utilizando innerText e innerHTML.
+// Ejercicio 6: Manipulación del DOM con querySelector, querySelectorAll, innerText e innerHTML. Consigna: Utiliza querySelector y querySelectorAll para seleccionar elementos del DOM y modifica su contenido utilizando innerText e innerHTML.
 // Instrucciones:
 // 1) Selecciona un elemento específico utilizando querySelector y almacénalo en una variable.
 // 2) Modifica el contenido del elemento seleccionado utilizando innerText.
@@ -245,6 +245,54 @@ funcionPromesa3()
     }
 }, 1000 )
 })
+// ******************************************************************************************************************************************
+
+// Ejercicio 7: Manipulación avanzada del DOM con createElement, appendChild, setAttribute, classList.add, classList.remove, classList.toggle, y className
+
+// Consigna: Utiliza createElement y appendChild para crear y agregar nuevos elementos al DOM. Luego, manipula las clases y atributos de estos elementos utilizando setAttribute, classList.add, classList.remove, classList.toggle, y className.
+
+// Instrucciones:
+// 1) Crea un nuevo elemento div utilizando createElement y almacénalo en una variable.
+// 2) Asigna un ID al div utilizando setAttribute y agrega una clase utilizando classList.add.
+// 3) Crea un nuevo elemento p utilizando createElement y establece su contenido de texto utilizando innerText. Luego, agrégalo al div utilizando appendChild.
+// 4) Agrega el div al cuerpo del documento utilizando appendChild.
+// 5) Crea una función que utilice classList.toggle para alternar una clase en el div cada vez que se llame.
+// 6) Utiliza className para establecer múltiples clases al div.
+// 7) Crea un botón utilizando createElement, establece su contenido de texto, y agrégalo al cuerpo del documento.
+// 8) Asigna un evento click al botón para llamar a la función que alterna la clase en el div.
+
+let nuevoElemento = document.createElement ("div");
+
+nuevoElemento.setAttribute ("title", "Este es un div");
+
+nuevoElemento.classList.add ("class-div");
+
+let nuevoParrafo = document.createElement ("p");
+
+nuevoParrafo.innerText = "parrafo x";
+
+nuevoElemento.appendChild (nuevoParrafo);
+
+document.body.appendChild (nuevoElemento);
+
+console.log (nuevoElemento);
+
+function alternarClase () {
+        return (nuevoElemento.classList.toggle("class-div"));
+}
+
+
+
+
+console.log (nuevoElemento);
+
+let boton = document.createElement ("button");
+
+boton.innerText = "Alternar clase";
+
+document.body.appendChild (boton);
+
+boton.addEventListener ("click", alternarClase);
 // ******************************************************************************************************************************************
 
 // Manual de JavaScript: Integración de Promesas y DOM
